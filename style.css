@@ -1,0 +1,665 @@
+/* ==========================================================================
+   MY LIVE "HOME" — ESTILOS DE CUADERNO DE COLOREAR INFANTIL (DARKCRY 1.0)
+   ========================================================================== */
+
+:root {
+  /* PALETA PRIMARIA ESPECIFICADA */
+  --c-blue-deep: #1e3a8a;
+  --c-blue-sky: #60a5fa;
+  --c-purple: #7c3aed;
+  --c-violet: #a855f7;
+  --c-indigo: #4338ca;
+  --c-red: #dc2626;
+  --c-grey: #4b5563;
+  --c-grey-light: #9ca3af;
+  --c-black: #18181b;
+  --c-charcoal: #111827;
+
+  /* FONDOS Y PAPEL DE DIBUJO */
+  --paper-bg: #fcf9ee;
+  --paper-sheet: #fffef9;
+  --paper-border: #e2d9c2;
+  --paper-stain: #f3ecd8;
+
+  /* COLORES ACCESORIOS DE CERA PASTEL */
+  --c-yellow: #facc15;
+  --c-yellow-light: #fef08a;
+  --c-mint: #6ee7b7;
+  --c-pink: #f472b6;
+
+  /* FUENTES */
+  --font-child: "Comic Sans MS", "Chalkboard SE", "Comic Neue", cursive, sans-serif;
+  --font-typewriter: "Courier New", Courier, monospace;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+
+/* RESET GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #2b2620;
+}
+
+body.notebook-body {
+  position: relative;
+  background-color: var(--paper-bg);
+  background-image: radial-gradient(#e5dec9 1px, transparent 1px);
+  background-size: 16px 16px;
+  color: var(--c-charcoal);
+  font-family: var(--font-child);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* TEXTURA DE PAPEL POROSO SUPERPUESTA */
+.paper-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.015) 0px,
+    rgba(0, 0, 0, 0.015) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.8;
+}
+
+/* CABECERA ESCOLAR ARTESANAL */
+.school-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #18181b;
+  border-bottom: 4px solid var(--c-purple);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-crayon-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  border: 2px dashed var(--c-blue-sky);
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+}
+
+.meta-tag {
+  font-family: var(--font-typewriter);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--c-blue-sky);
+  display: block;
+}
+
+.header-title {
+  font-family: var(--font-child);
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-shadow: 1px 1px 0 var(--c-purple);
+}
+
+.btn-portal-crayon {
+  display: inline-block;
+  background: #27272a;
+  color: var(--c-yellow-light);
+  font-family: var(--font-typewriter);
+  font-size: 0.78rem;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--c-yellow);
+  transition: all 0.25s ease;
+}
+
+.btn-portal-crayon:hover {
+  background: var(--c-purple);
+  color: #fff;
+  border-color: var(--c-violet);
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.6);
+  transform: translateY(-2px);
+}
+
+/* CONTENEDOR PRINCIPAL DEL CUADERNO */
+.coloring-book {
+  max-width: 1100px;
+  margin: 30px auto 60px auto;
+  padding: 0 20px;
+}
+
+/* SECCIÓN PORTADA */
+.book-cover-section {
+  position: relative;
+  background: var(--paper-sheet);
+  border: 2px solid var(--paper-border);
+  border-radius: 12px 18px 18px 12px;
+  padding: 30px;
+  margin-bottom: 50px;
+  box-shadow: 6px 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cover-inner {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+.cover-image-wrap {
+  position: relative;
+  text-align: center;
+}
+
+.cover-art {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  border: 3px solid #d1d5db;
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tape-sticker {
+  margin-top: 12px;
+  background: #fef08a;
+  color: #854d0e;
+  font-family: var(--font-typewriter);
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 6px 14px;
+  border-left: 4px solid var(--c-red);
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.1);
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+
+.cover-heading {
+  font-size: 1.6rem;
+  color: var(--c-blue-deep);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.cover-desc {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--c-grey);
+  margin-bottom: 18px;
+}
+
+.palette-legend {
+  background: var(--paper-stain);
+  border: 1px dashed #d1c7ad;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 22px;
+}
+
+.legend-title {
+  display: block;
+  font-family: var(--font-typewriter);
+  font-size: 0.72rem;
+  font-weight: bold;
+  color: var(--c-charcoal);
+  margin-bottom: 8px;
+}
+
+.crayons-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.crayon-pill {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-family: var(--font-child);
+  font-weight: bold;
+}
+
+.blue-pill { background: #dbeafe; color: var(--c-blue-deep); border: 1px solid var(--c-blue-sky); }
+.grey-pill { background: #e5e7eb; color: var(--c-grey); border: 1px solid var(--c-grey-light); }
+.red-pill { background: #fee2e2; color: var(--c-red); border: 1px solid #fca5a5; }
+.purple-pill { background: #f3e8ff; color: var(--c-purple); border: 1px solid var(--c-violet); }
+.black-pill { background: #e4e4e7; color: var(--c-black); border: 1px solid #71717a; }
+
+.btn-start-coloring {
+  display: inline-block;
+  background: var(--c-purple);
+  color: #fff;
+  font-family: var(--font-child);
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-start-coloring:hover {
+  background: var(--c-violet);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
+}
+
+/* LÁMINA / PÁGINA DEL CUADERNO (SISTEMA DE 3 ESPACIOS) */
+.coloring-page {
+  position: relative;
+  background: var(--paper-sheet);
+  border: 1px solid var(--paper-border);
+  border-radius: 10px 16px 16px 10px;
+  padding: 24px;
+  margin-bottom: 45px;
+  box-shadow: 4px 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* MARGEN CON ESPIRAL DE CUADERNO */
+.page-spiral-holes {
+  position: absolute;
+  top: 0;
+  left: -12px;
+  width: 14px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 28px,
+    #4a3f35 28px,
+    #4a3f35 34px
+  );
+}
+
+/* REJILLA DE 3 ESPACIOS */
+.page-grid {
+  display: grid;
+  grid-template-columns: 320px 240px 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* ESPACIO 1: DIBUJO INFANTIL */
+.space-drawing {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawing-frame {
+  background: #fff;
+  border: 2px solid #374151;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 2px 3px 10px rgba(0,0,0,0.06);
+}
+
+.drawing-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  filter: contrast(1.05);
+  display: block;
+}
+
+.page-number {
+  display: block;
+  font-family: var(--font-typewriter);
+  font-size: 0.68rem;
+  color: var(--c-grey);
+  text-align: center;
+  margin-top: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* ESPACIO 2: ESTÉTICA HIPER-INFANTIL & BOTÓN CRAYÓN */
+.space-aesthetic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.crayon-panel {
+  background: var(--paper-stain);
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  justify-content: center;
+}
+
+.theme-label {
+  font-family: var(--font-typewriter);
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--c-grey);
+  letter-spacing: 0.08em;
+}
+
+/* BOTÓN DE CRAYÓN EXCLUSIVO */
+.crayon-player-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 10px;
+  border-radius: 16px;
+  border: 3px solid transparent;
+  cursor: pointer;
+  font-family: var(--font-child);
+  font-size: 0.82rem;
+  font-weight: bold;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.crayon-icon {
+  font-size: 1.8rem;
+  transition: transform 0.2s ease;
+}
+
+.crayon-player-btn:hover .crayon-icon {
+  transform: rotate(-15deg) scale(1.15);
+}
+
+/* VARIANTES DE BOTÓN DE CRAYÓN */
+.btn-blue {
+  background: #eff6ff;
+  color: var(--c-blue-deep);
+  border-color: var(--c-blue-sky);
+}
+.btn-blue:hover {
+  background: var(--c-blue-deep);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.4);
+}
+
+.btn-grey {
+  background: #f1f5f9;
+  color: var(--c-charcoal);
+  border-color: var(--c-grey-light);
+}
+.btn-grey:hover {
+  background: var(--c-charcoal);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.4);
+}
+
+.btn-celeste {
+  background: #f0fdfa;
+  color: #0369a1;
+  border-color: var(--c-blue-sky);
+}
+.btn-celeste:hover {
+  background: #0284c7;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(2, 132, 199, 0.4);
+}
+
+.btn-purple {
+  background: #faf5ff;
+  color: var(--c-purple);
+  border-color: var(--c-violet);
+}
+.btn-purple:hover {
+  background: var(--c-purple);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.5);
+}
+
+.btn-indigo {
+  background: #eef2ff;
+  color: var(--c-indigo);
+  border-color: #6366f1;
+}
+.btn-indigo:hover {
+  background: var(--c-indigo);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(67, 56, 202, 0.5);
+}
+
+.btn-yellow {
+  background: #fefce8;
+  color: #854d0e;
+  border-color: var(--c-yellow);
+}
+.btn-yellow:hover {
+  background: var(--c-yellow);
+  color: #000;
+  box-shadow: 0 6px 16px rgba(250, 204, 21, 0.5);
+}
+
+.btn-mint {
+  background: #f0fdf4;
+  color: #065f46;
+  border-color: var(--c-mint);
+}
+.btn-mint:hover {
+  background: #059669;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.4);
+}
+
+.crayon-specs {
+  font-family: var(--font-typewriter);
+  font-size: 0.65rem;
+  color: var(--c-grey-light);
+  line-height: 1.4;
+}
+
+/* ESPACIO 3: LÍRICA CONDENSADA & ESCRITO DEL NIÑO */
+.space-narrative {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.lyrics-box {
+  background: #ffffff;
+  border-left: 4px solid var(--c-purple);
+  padding: 12px 14px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 1px 2px 6px rgba(0,0,0,0.04);
+}
+
+.lyrics-box p {
+  font-family: var(--font-typewriter);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--c-charcoal);
+  margin-bottom: 4px;
+}
+
+.lyrics-box p:last-child {
+  margin-bottom: 0;
+}
+
+.child-handwriting {
+  background: #fefbf3;
+  border: 1px dashed #d6cca9;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+.diary-date {
+  font-family: var(--font-typewriter);
+  font-size: 0.68rem;
+  font-weight: bold;
+  color: var(--c-red);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.child-handwriting p {
+  font-family: var(--font-child);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #27272a;
+}
+
+/* CONTRAPORTADA / FINAL DEL CUADERNO */
+.notebook-backcover {
+  background: #18181b;
+  border: 3px solid var(--c-red);
+  border-radius: 12px;
+  padding: 30px;
+  color: #f4f4f5;
+  margin: 50px 0 30px 0;
+  box-shadow: 0 8px 30px rgba(220, 38, 38, 0.2);
+}
+
+.stamp-box {
+  display: inline-block;
+  border: 2px solid var(--c-red);
+  color: var(--c-red);
+  font-family: var(--font-typewriter);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 12px;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+  transform: rotate(-2deg);
+}
+
+.backcover-title {
+  font-family: var(--font-child);
+  font-size: 1.45rem;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.backcover-p {
+  font-size: 0.94rem;
+  line-height: 1.7;
+  color: #d4d4d8;
+  margin-bottom: 14px;
+}
+
+.backcover-quote {
+  background: #27272a;
+  border-left: 3px solid var(--c-purple);
+  padding: 12px 16px;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #e9d5ff;
+}
+
+/* PIE DE PÁGINA ESCOLAR */
+.school-footer {
+  background: #09090b;
+  border-top: 2px solid var(--c-blue-deep);
+  padding: 40px 20px;
+  text-align: center;
+  color: #a1a1aa;
+}
+
+.footer-wrap {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-crest {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.footer-title {
+  font-family: var(--font-child);
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.08em;
+}
+
+.footer-credits {
+  font-family: var(--font-typewriter);
+  font-size: 0.7rem;
+  color: #71717a;
+}
+
+.btn-footer-return {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--c-blue-sky);
+  border: 1px solid var(--c-blue-sky);
+  padding: 8px 20px;
+  font-family: var(--font-typewriter);
+  font-size: 0.78rem;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
+
+.btn-footer-return:hover {
+  background: var(--c-blue-sky);
+  color: #000;
+  box-shadow: 0 0 14px rgba(96, 165, 250, 0.5);
+}
+
+/* RESPONSIVIDAD PARA TABLETS Y TELÉFONOS */
+@media (max-width: 960px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .drawing-frame {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .cover-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cover-art {
+    margin: 0 auto;
+  }
+
+  .crayons-row {
+    justify-content: center;
+  }
+
+  .school-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
