@@ -663,3 +663,12 @@ body.notebook-body {
     justify-content: flex-end;
   }
 }
+.header-actions{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap}
+.next-archive-link{display:inline-flex;align-items:center;gap:8px;max-width:340px;padding:7px 10px;border:1px dashed var(--c-purple);border-radius:12px;background:#fffef9;color:#27272a;text-decoration:none;box-shadow:2px 3px 0 rgba(124,58,237,.12);transition:all .2s ease}
+.next-archive-link:hover{border-style:solid;background:#f5f3ff;transform:translateY(-2px)}
+.next-archive-mark{width:36px;height:36px;flex:0 0 36px;object-fit:contain;border-radius:50%;background:#fff;padding:2px;border:1px solid var(--paper-border)}
+.next-archive-copy{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.next-archive-label{font:.65rem var(--font-typewriter);font-weight:700;color:var(--c-purple)}
+.next-archive-title{font:.75rem var(--font-typewriter);font-weight:700}
+.next-archive-description{font:.62rem var(--font-typewriter);color:#52525b}
+@media(max-width:960px){.header-actions{width:100%;justify-content:flex-start}.next-archive-link{max-width:100%}}
